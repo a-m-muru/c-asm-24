@@ -29,7 +29,7 @@ int32_t mem_move(int32_t poses)
 	_mem_init_check();
 
 	int32_t after = (int32_t)_bf_mem_pointer + poses;
-	if (after > (int32_t)MEMORY_SIZE)
+	if (after >= (int32_t)MEMORY_SIZE)
 		_bf_mem_pointer = _bf_mem_pointer + poses - MEMORY_SIZE;
 	else if (after < 0) _bf_mem_pointer = MEMORY_SIZE + poses;
 	else _bf_mem_pointer = _bf_mem_pointer + poses;
